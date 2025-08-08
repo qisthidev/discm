@@ -2,6 +2,7 @@
 import resultMap from '../data/resultMap.json';
 import patternMap from '../data/patternMap.json';
 import patterns from '../data/patterns.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 function tally(params) {
   const dims = ['D','I','S','C'];
@@ -68,55 +69,43 @@ if (!pattern) {
 
 const shareUrl = patternId ? `${url.origin}/result?p=${patternId}` : url.href;
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DISC Result</title>
-    {pattern && (
-      <>
-        <meta property="og:title" content={`My DISC type is ${pattern.name}`} />
-        <meta property="og:image" content={`/og/pattern-${pattern.id}.png`} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </>
-    )}
-    <style>
-      body{font-family: system-ui, sans-serif; margin:0; padding:20px;}
-      .card{border:1px solid #eee; padding:16px; border-radius:8px}
-      .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:8px}
-      .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
-    </style>
-  </head>
-  <body>
-    <h1>Result</h1>
-    {(!pattern) && (
-      <div class="card">
-        <p>Incomplete or unmapped responses. Please go back and complete the assessment.</p>
-        <p class="mono">Change: D {change.D}, I {change.I}, S {change.S}, C {change.C}</p>
+<BaseLayout title="DISC Result">
+  {pattern && (
+    <>
+      <meta property="og:title" content={`My DISC type is ${pattern.name}`} />
+      <meta property="og:image" content={`/og/pattern-${pattern.id}.png`} />
+      <meta name="twitter:card" content="summary_large_image" />
+    </>
+  )}
+
+  <h1 class="text-2xl font-bold mb-4">Result</h1>
+
+  {(!pattern) && (
+    <div class="rounded-lg border border-slate-200 bg-white p-4">
+      <p>Incomplete or unmapped responses. Please go back and complete the assessment.</p>
+      <p class="font-mono text-sm text-slate-600 mt-2">Change: D {change.D}, I {change.I}, S {change.S}, C {change.C}</p>
+    </div>
+  )}
+
+  {pattern && (
+    <div class="rounded-lg border border-slate-200 bg-white p-6 space-y-4">
+      <h2 class="text-xl font-semibold">{pattern.name}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+        <div><strong>Emotions</strong><br/>{pattern.emotions}</div>
+        <div><strong>Goal</strong><br/>{pattern.goal}</div>
+        <div><strong>Judges Others</strong><br/>{pattern.judges_others}</div>
+        <div><strong>Influences Others</strong><br/>{pattern.influences_others}</div>
+        <div><strong>Org Value</strong><br/>{pattern.organization_value}</div>
+        <div><strong>Overuses</strong><br/>{pattern.overuses}</div>
+        <div><strong>Under Pressure</strong><br/>{pattern.under_pressure}</div>
+        <div><strong>Fear</strong><br/>{pattern.fear}</div>
       </div>
-    )}
-    {pattern && (
-      <div class="card">
-        <h2>{pattern.name}</h2>
-        <div class="grid">
-          <div><strong>Emotions</strong><br/>{pattern.emotions}</div>
-          <div><strong>Goal</strong><br/>{pattern.goal}</div>
-          <div><strong>Judges Others</strong><br/>{pattern.judges_others}</div>
-          <div><strong>Influences Others</strong><br/>{pattern.influences_others}</div>
-          <div><strong>Org Value</strong><br/>{pattern.organization_value}</div>
-          <div><strong>Overuses</strong><br/>{pattern.overuses}</div>
-          <div><strong>Under Pressure</strong><br/>{pattern.under_pressure}</div>
-          <div><strong>Fear</strong><br/>{pattern.fear}</div>
-        </div>
-        <p><strong>Effectiveness</strong><br/>{pattern.effectiveness}</p>
-        <p>{pattern.description}</p>
-        <p>
-          <a href={shareUrl} target="_blank" rel="noopener">Share this result</a>
-        </p>
-        <p>
-          <a href="/">Retake the assessment</a>
-        </p>
+      <p><strong>Effectiveness</strong><br/>{pattern.effectiveness}</p>
+      <p>{pattern.description}</p>
+      <div class="flex gap-4 pt-2">
+        <a class="text-blue-700 hover:underline" href={shareUrl} target="_blank" rel="noopener">Share this result</a>
+        <a class="text-slate-700 hover:underline" href="/">Retake the assessment</a>
       </div>
-    )}
-  </body>
-</html>
+    </div>
+  )}
+</BaseLayout>
