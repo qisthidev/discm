@@ -2,28 +2,784 @@
   {
     "id": 1,
     "groupNo": 1,
-    "term": "Self-reliant",
-    "mostMark": "D",
-    "leastMark": "D"
-  },
-  {
-    "id": 2,
-    "groupNo": 1,
-    "term": "Patient",
-    "mostMark": "S",
-    "leastMark": "S"
-  },
-  {
-    "id": 3,
-    "groupNo": 1,
-    "term": "Soft spoken",
+    "term": "term1",
     "mostMark": "C",
     "leastMark": "C"
   },
   {
+    "id": 2,
+    "groupNo": 1,
+    "term": "term2",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 3,
+    "groupNo": 1,
+    "term": "term3",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
     "id": 4,
     "groupNo": 1,
-    "term": "Sociable",
+    "term": "term4",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 5,
+    "groupNo": 2,
+    "term": "term5",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 6,
+    "groupNo": 2,
+    "term": "term6",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 7,
+    "groupNo": 2,
+    "term": "term7",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 8,
+    "groupNo": 2,
+    "term": "term8",
+    "mostMark": "I",
+    "leastMark": "#"
+  },
+  {
+    "id": 9,
+    "groupNo": 3,
+    "term": "term9",
+    "mostMark": "C",
+    "leastMark": "#"
+  },
+  {
+    "id": 10,
+    "groupNo": 3,
+    "term": "term10",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 11,
+    "groupNo": 3,
+    "term": "term11",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 12,
+    "groupNo": 3,
+    "term": "term12",
+    "mostMark": "#",
+    "leastMark": "I"
+  },
+  {
+    "id": 13,
+    "groupNo": 4,
+    "term": "term13",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 14,
+    "groupNo": 4,
+    "term": "term14",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 15,
+    "groupNo": 4,
+    "term": "term15",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 16,
+    "groupNo": 4,
+    "term": "term16",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 17,
+    "groupNo": 5,
+    "term": "term17",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 18,
+    "groupNo": 5,
+    "term": "term18",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 19,
+    "groupNo": 5,
+    "term": "term19",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 20,
+    "groupNo": 5,
+    "term": "term20",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 21,
+    "groupNo": 6,
+    "term": "term21",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 22,
+    "groupNo": 6,
+    "term": "term22",
+    "mostMark": "C",
+    "leastMark": "#"
+  },
+  {
+    "id": 23,
+    "groupNo": 6,
+    "term": "term23",
+    "mostMark": "#",
+    "leastMark": "S"
+  },
+  {
+    "id": 24,
+    "groupNo": 6,
+    "term": "term24",
+    "mostMark": "#",
+    "leastMark": "D"
+  },
+  {
+    "id": 25,
+    "groupNo": 7,
+    "term": "term25",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 26,
+    "groupNo": 7,
+    "term": "term26",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 27,
+    "groupNo": 7,
+    "term": "term27",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 28,
+    "groupNo": 7,
+    "term": "term28",
+    "mostMark": "#",
+    "leastMark": "I"
+  },
+  {
+    "id": 29,
+    "groupNo": 8,
+    "term": "term29",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 30,
+    "groupNo": 8,
+    "term": "term30",
+    "mostMark": "S",
+    "leastMark": "#"
+  },
+  {
+    "id": 31,
+    "groupNo": 8,
+    "term": "term31",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 32,
+    "groupNo": 8,
+    "term": "term32",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 33,
+    "groupNo": 9,
+    "term": "term33",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 34,
+    "groupNo": 9,
+    "term": "term34",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 35,
+    "groupNo": 9,
+    "term": "term35",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 36,
+    "groupNo": 9,
+    "term": "term36",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 37,
+    "groupNo": 10,
+    "term": "term37",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 38,
+    "groupNo": 10,
+    "term": "term38",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 39,
+    "groupNo": 10,
+    "term": "term39",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 40,
+    "groupNo": 10,
+    "term": "term40",
+    "mostMark": "#",
+    "leastMark": "S"
+  },
+  {
+    "id": 41,
+    "groupNo": 11,
+    "term": "term41",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 42,
+    "groupNo": 11,
+    "term": "term42",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 43,
+    "groupNo": 11,
+    "term": "term43",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 44,
+    "groupNo": 11,
+    "term": "term44",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 45,
+    "groupNo": 12,
+    "term": "term45",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 46,
+    "groupNo": 12,
+    "term": "term46",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 47,
+    "groupNo": 12,
+    "term": "term47",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 48,
+    "groupNo": 12,
+    "term": "term48",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 49,
+    "groupNo": 13,
+    "term": "term49",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 50,
+    "groupNo": 13,
+    "term": "term50",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 51,
+    "groupNo": 13,
+    "term": "term51",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 52,
+    "groupNo": 13,
+    "term": "term52",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 53,
+    "groupNo": 14,
+    "term": "term53",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 54,
+    "groupNo": 14,
+    "term": "term54",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 55,
+    "groupNo": 14,
+    "term": "term55",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 56,
+    "groupNo": 14,
+    "term": "term56",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 57,
+    "groupNo": 15,
+    "term": "term57",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 58,
+    "groupNo": 15,
+    "term": "term58",
+    "mostMark": "S",
+    "leastMark": "#"
+  },
+  {
+    "id": 59,
+    "groupNo": 15,
+    "term": "term59",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 60,
+    "groupNo": 15,
+    "term": "term60",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 61,
+    "groupNo": 16,
+    "term": "term61",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 62,
+    "groupNo": 16,
+    "term": "term62",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 63,
+    "groupNo": 16,
+    "term": "term63",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 64,
+    "groupNo": 16,
+    "term": "term64",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 65,
+    "groupNo": 17,
+    "term": "term65",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 66,
+    "groupNo": 17,
+    "term": "term66",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 67,
+    "groupNo": 17,
+    "term": "term67",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 68,
+    "groupNo": 17,
+    "term": "term68",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 69,
+    "groupNo": 18,
+    "term": "term69",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 70,
+    "groupNo": 18,
+    "term": "term70",
+    "mostMark": "D",
+    "leastMark": "#"
+  },
+  {
+    "id": 71,
+    "groupNo": 18,
+    "term": "term71",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 72,
+    "groupNo": 18,
+    "term": "term72",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 73,
+    "groupNo": 19,
+    "term": "term73",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 74,
+    "groupNo": 19,
+    "term": "term74",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 75,
+    "groupNo": 19,
+    "term": "term75",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 76,
+    "groupNo": 19,
+    "term": "term76",
+    "mostMark": "#",
+    "leastMark": "S"
+  },
+  {
+    "id": 77,
+    "groupNo": 20,
+    "term": "term77",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 78,
+    "groupNo": 20,
+    "term": "term78",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 79,
+    "groupNo": 20,
+    "term": "term79",
+    "mostMark": "#",
+    "leastMark": "S"
+  },
+  {
+    "id": 80,
+    "groupNo": 20,
+    "term": "term80",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 81,
+    "groupNo": 21,
+    "term": "term81",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 82,
+    "groupNo": 21,
+    "term": "term82",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 83,
+    "groupNo": 21,
+    "term": "term83",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 84,
+    "groupNo": 21,
+    "term": "term84",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 85,
+    "groupNo": 22,
+    "term": "term85",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 86,
+    "groupNo": 22,
+    "term": "term86",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 87,
+    "groupNo": 22,
+    "term": "term87",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 88,
+    "groupNo": 22,
+    "term": "term88",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 89,
+    "groupNo": 23,
+    "term": "term89",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 90,
+    "groupNo": 23,
+    "term": "term90",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 91,
+    "groupNo": 23,
+    "term": "term91",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 92,
+    "groupNo": 23,
+    "term": "term92",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 93,
+    "groupNo": 24,
+    "term": "term93",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 94,
+    "groupNo": 24,
+    "term": "term94",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 95,
+    "groupNo": 24,
+    "term": "term95",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 96,
+    "groupNo": 24,
+    "term": "term96",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 97,
+    "groupNo": 25,
+    "term": "term97",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 98,
+    "groupNo": 25,
+    "term": "term98",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 99,
+    "groupNo": 25,
+    "term": "term99",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 100,
+    "groupNo": 25,
+    "term": "term100",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 101,
+    "groupNo": 26,
+    "term": "term101",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 102,
+    "groupNo": 26,
+    "term": "term102",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 103,
+    "groupNo": 26,
+    "term": "term103",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 104,
+    "groupNo": 26,
+    "term": "term104",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 105,
+    "groupNo": 27,
+    "term": "term105",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 106,
+    "groupNo": 27,
+    "term": "term106",
+    "mostMark": "I",
+    "leastMark": "I"
+  },
+  {
+    "id": 107,
+    "groupNo": 27,
+    "term": "term107",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 108,
+    "groupNo": 27,
+    "term": "term108",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 109,
+    "groupNo": 28,
+    "term": "term109",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 110,
+    "groupNo": 28,
+    "term": "term110",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 111,
+    "groupNo": 28,
+    "term": "term111",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 112,
+    "groupNo": 28,
+    "term": "term112",
     "mostMark": "I",
     "leastMark": "I"
   }

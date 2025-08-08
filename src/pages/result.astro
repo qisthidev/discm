@@ -7,9 +7,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 function tally(params) {
   const dims = ['D','I','S','C'];
   const init = { D:0, I:0, S:0, C:0 };
+  // Materialize the params iterator to avoid consumption across multiple passes
+  const pairs = Array.from(params);
   const count = (prefix) => {
     const acc = { ...init };
-    for (const [key, value] of params) {
+    for (const [key, value] of pairs) {
       if (key.startsWith(prefix)) {
         const v = value;
         if (dims.includes(v)) acc[v]++;
@@ -29,9 +31,21 @@ function tally(params) {
 }
 
 function lookupSegment(dimension, value) {
-  const found = resultMap.find((r) => r.dimension === dimension && r.value === value);
-  if (!found) return null;
-  return found.segment;
+  const exact = resultMap.find((r) => r.dimension === dimension && r.value === value);
+  if (exact) return exact.segment;
+  // Fallback: choose the nearest available value for this dimension
+  const candidates = resultMap.filter((r) => r.dimension === dimension);
+  if (candidates.length === 0) return null;
+  let nearest = candidates[0];
+  let bestDiff = Math.abs(candidates[0].value - value);
+  for (let i = 1; i < candidates.length; i++) {
+    const diff = Math.abs(candidates[i].value - value);
+    if (diff < bestDiff) {
+      bestDiff = diff;
+      nearest = candidates[i];
+    }
+  }
+  return nearest?.segment ?? null;
 }
 
 function lookupPatternId(segments) {
