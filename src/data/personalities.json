@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "groupNo": 1,
+    "term": "Self-reliant",
+    "mostMark": "D",
+    "leastMark": "D"
+  },
+  {
+    "id": 2,
+    "groupNo": 1,
+    "term": "Patient",
+    "mostMark": "S",
+    "leastMark": "S"
+  },
+  {
+    "id": 3,
+    "groupNo": 1,
+    "term": "Soft spoken",
+    "mostMark": "C",
+    "leastMark": "C"
+  },
+  {
+    "id": 4,
+    "groupNo": 1,
+    "term": "Sociable",
+    "mostMark": "I",
+    "leastMark": "I"
+  }
+]

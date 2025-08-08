@@ -1,0 +1,6 @@
+id,groupNo,term,mostMark,leastMark
+# Example rows (remove comments for real data and ensure contiguous ids)
+1,1,Self-reliant,D,D
+2,1,Patient,S,S
+3,1,Soft spoken,C,C
+4,1,Sociable,I,I

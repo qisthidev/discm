@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Example Pattern",
+    "emotions": "Emotions text",
+    "goal": "Goal text",
+    "judges_others": "Judges text",
+    "influences_others": "Influences text",
+    "organization_value": "Org value text",
+    "overuses": "Overuses text",
+    "under_pressure": "Under pressure text",
+    "fear": "Fear text",
+    "effectiveness": "Effectiveness text",
+    "description": "Detailed description..."
+  }
+]

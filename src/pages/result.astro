@@ -1,0 +1,122 @@
+---
+import resultMap from '../data/resultMap.json';
+import patternMap from '../data/patternMap.json';
+import patterns from '../data/patterns.json';
+
+function tally(params) {
+  const dims = ['D','I','S','C'];
+  const init = { D:0, I:0, S:0, C:0 };
+  const count = (prefix) => {
+    const acc = { ...init };
+    for (const [key, value] of params) {
+      if (key.startsWith(prefix)) {
+        const v = value;
+        if (dims.includes(v)) acc[v]++;
+      }
+    }
+    return acc;
+  };
+  const most = count('m[');
+  const least = count('l[');
+  const change = {
+    D: most.D - least.D,
+    I: most.I - least.I,
+    S: most.S - least.S,
+    C: most.C - least.C,
+  };
+  return { most, least, change };
+}
+
+function lookupSegment(dimension, value) {
+  const found = resultMap.find((r) => r.dimension === dimension && r.value === value);
+  if (!found) return null;
+  return found.segment;
+}
+
+function lookupPatternId(segments) {
+  const row = patternMap.find((p) => p.d === segments.D && p.i === segments.I && p.s === segments.S && p.c === segments.C);
+  return row?.pattern ?? null;
+}
+
+function getPattern(patternId) {
+  return patterns.find((p) => p.id === patternId) || null;
+}
+
+const url = new URL(Astro.request.url);
+const pParam = url.searchParams.get('p');
+let patternId = pParam ? Number(pParam) : null;
+let pattern = patternId ? getPattern(patternId) : null;
+
+let most = { D:0, I:0, S:0, C:0 };
+let least = { D:0, I:0, S:0, C:0 };
+let change = { D:0, I:0, S:0, C:0 };
+
+if (!pattern) {
+  const tallied = tally(url.searchParams.entries());
+  most = tallied.most;
+  least = tallied.least;
+  change = tallied.change;
+  const segments = {
+    D: lookupSegment('D', change.D),
+    I: lookupSegment('I', change.I),
+    S: lookupSegment('S', change.S),
+    C: lookupSegment('C', change.C),
+  };
+  patternId = segments.D && segments.I && segments.S && segments.C ? lookupPatternId(segments) : null;
+  pattern = patternId ? getPattern(patternId) : null;
+}
+
+const shareUrl = patternId ? `${url.origin}/result?p=${patternId}` : url.href;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DISC Result</title>
+    {pattern && (
+      <>
+        <meta property="og:title" content={`My DISC type is ${pattern.name}`} />
+        <meta property="og:image" content={`/og/pattern-${pattern.id}.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </>
+    )}
+    <style>
+      body{font-family: system-ui, sans-serif; margin:0; padding:20px;}
+      .card{border:1px solid #eee; padding:16px; border-radius:8px}
+      .grid{display:grid; grid-template-columns: repeat(4, 1fr); gap:8px}
+      .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    </style>
+  </head>
+  <body>
+    <h1>Result</h1>
+    {(!pattern) && (
+      <div class="card">
+        <p>Incomplete or unmapped responses. Please go back and complete the assessment.</p>
+        <p class="mono">Change: D {change.D}, I {change.I}, S {change.S}, C {change.C}</p>
+      </div>
+    )}
+    {pattern && (
+      <div class="card">
+        <h2>{pattern.name}</h2>
+        <div class="grid">
+          <div><strong>Emotions</strong><br/>{pattern.emotions}</div>
+          <div><strong>Goal</strong><br/>{pattern.goal}</div>
+          <div><strong>Judges Others</strong><br/>{pattern.judges_others}</div>
+          <div><strong>Influences Others</strong><br/>{pattern.influences_others}</div>
+          <div><strong>Org Value</strong><br/>{pattern.organization_value}</div>
+          <div><strong>Overuses</strong><br/>{pattern.overuses}</div>
+          <div><strong>Under Pressure</strong><br/>{pattern.under_pressure}</div>
+          <div><strong>Fear</strong><br/>{pattern.fear}</div>
+        </div>
+        <p><strong>Effectiveness</strong><br/>{pattern.effectiveness}</p>
+        <p>{pattern.description}</p>
+        <p>
+          <a href={shareUrl} target="_blank" rel="noopener">Share this result</a>
+        </p>
+        <p>
+          <a href="/">Retake the assessment</a>
+        </p>
+      </div>
+    )}
+  </body>
+</html>

@@ -1,0 +1,141 @@
+[
+  {"id":1,"groupNo":1,"term":"Self-reliant","mostMark":"D","leastMark":"D"},
+  {"id":2,"groupNo":1,"term":"Patient","mostMark":"S","leastMark":"S"},
+  {"id":3,"groupNo":1,"term":"Soft spoken","mostMark":"C","leastMark":"C"},
+  {"id":4,"groupNo":1,"term":"Sociable","mostMark":"I","leastMark":"I"},
+
+  {"id":5,"groupNo":2,"term":"Decisive","mostMark":"D","leastMark":"D"},
+  {"id":6,"groupNo":2,"term":"Conventional","mostMark":"S","leastMark":"S"},
+  {"id":7,"groupNo":2,"term":"Controlled","mostMark":"C","leastMark":"C"},
+  {"id":8,"groupNo":2,"term":"Talkative","mostMark":"I","leastMark":"I"},
+
+  {"id":9,"groupNo":3,"term":"Precise","mostMark":"C","leastMark":"C"},
+  {"id":10,"groupNo":3,"term":"Direct","mostMark":"D","leastMark":"D"},
+  {"id":11,"groupNo":3,"term":"Jovial","mostMark":"I","leastMark":"I"},
+  {"id":12,"groupNo":3,"term":"Even-tempered","mostMark":"S","leastMark":"S"},
+
+  {"id":13,"groupNo":4,"term":"Brave","mostMark":"D","leastMark":"D"},
+  {"id":14,"groupNo":4,"term":"Inspiring","mostMark":"I","leastMark":"I"},
+  {"id":15,"groupNo":4,"term":"Timid","mostMark":"#","leastMark":"C"},
+  {"id":16,"groupNo":4,"term":"Submissive","mostMark":"S","leastMark":"S"},
+
+  {"id":17,"groupNo":5,"term":"Cautious","mostMark":"C","leastMark":"C"},
+  {"id":18,"groupNo":5,"term":"Good Natured","mostMark":"S","leastMark":"#"},
+  {"id":19,"groupNo":5,"term":"Determined","mostMark":"D","leastMark":"D"},
+  {"id":20,"groupNo":5,"term":"Convicing","mostMark":"I","leastMark":"I"},
+
+  {"id":21,"groupNo":6,"term":"Captivating","mostMark":"I","leastMark":"I"},
+  {"id":22,"groupNo":6,"term":"Compliant","mostMark":"C","leastMark":"C"},
+  {"id":23,"groupNo":6,"term":"Demanding","mostMark":"D","leastMark":"D"},
+  {"id":24,"groupNo":6,"term":"Contented","mostMark":"S","leastMark":"S"},
+
+  {"id":25,"groupNo":7,"term":"Calm","mostMark":"#","leastMark":"S"},
+  {"id":26,"groupNo":7,"term":"Outspoken","mostMark":"D","leastMark":"D"},
+  {"id":27,"groupNo":7,"term":"Friendly","mostMark":"I","leastMark":"#"},
+  {"id":28,"groupNo":7,"term":"Accurate","mostMark":"C","leastMark":"C"},
+
+  {"id":29,"groupNo":8,"term":"Daring","mostMark":"D","leastMark":"D"},
+  {"id":30,"groupNo":8,"term":"Satisfied","mostMark":"S","leastMark":"S"},
+  {"id":31,"groupNo":8,"term":"Enthuastic","mostMark":"I","leastMark":"I"},
+  {"id":32,"groupNo":8,"term":"Diplomatic","mostMark":"C","leastMark":"C"},
+
+  {"id":33,"groupNo":9,"term":"Amiable","mostMark":"S","leastMark":"S"},
+  {"id":34,"groupNo":9,"term":"Extroverted","mostMark":"I","leastMark":"I"},
+  {"id":35,"groupNo":9,"term":"Fearful","mostMark":"#","leastMark":"C"},
+  {"id":36,"groupNo":9,"term":"Aggressive","mostMark":"D","leastMark":"D"},
+
+  {"id":37,"groupNo":10,"term":"Obliging","mostMark":"S","leastMark":"S"},
+  {"id":38,"groupNo":10,"term":"Strong-willed","mostMark":"D","leastMark":"D"},
+  {"id":39,"groupNo":10,"term":"Reserved","mostMark":"C","leastMark":"C"},
+  {"id":40,"groupNo":10,"term":"Cheerful","mostMark":"I","leastMark":"I"},
+
+  {"id":41,"groupNo":11,"term":"Obedient","mostMark":"S","leastMark":"S"},
+  {"id":42,"groupNo":11,"term":"Fussy","mostMark":"C","leastMark":"C"},
+  {"id":43,"groupNo":11,"term":"Playful","mostMark":"I","leastMark":"I"},
+  {"id":44,"groupNo":11,"term":"Firm","mostMark":"D","leastMark":"D"},
+
+  {"id":45,"groupNo":12,"term":"Agreeable","mostMark":"S","leastMark":"S"},
+  {"id":46,"groupNo":12,"term":"Magnetic","mostMark":"I","leastMark":"I"},
+  {"id":47,"groupNo":12,"term":"Tactful","mostMark":"C","leastMark":"C"},
+  {"id":48,"groupNo":12,"term":"Insistent","mostMark":"D","leastMark":"D"},
+
+  {"id":49,"groupNo":13,"term":"Appealing","mostMark":"I","leastMark":"I"},
+  {"id":50,"groupNo":13,"term":"Careful","mostMark":"C","leastMark":"C"},
+  {"id":51,"groupNo":13,"term":"Restless","mostMark":"D","leastMark":"D"},
+  {"id":52,"groupNo":13,"term":"Neighborly","mostMark":"S","leastMark":"S"},
+
+  {"id":53,"groupNo":14,"term":"Light-hearted","mostMark":"I","leastMark":"I"},
+  {"id":54,"groupNo":14,"term":"Systematic","mostMark":"C","leastMark":"C"},
+  {"id":55,"groupNo":14,"term":"Cooperative","mostMark":"S","leastMark":"S"},
+  {"id":56,"groupNo":14,"term":"Argumentative","mostMark":"D","leastMark":"D"},
+
+  {"id":57,"groupNo":15,"term":"Lenient","mostMark":"S","leastMark":"S"},
+  {"id":58,"groupNo":15,"term":"Refined","mostMark":"C","leastMark":"C"},
+  {"id":59,"groupNo":15,"term":"Vigorous","mostMark":"D","leastMark":"D"},
+  {"id":60,"groupNo":15,"term":"Good mixer","mostMark":"I","leastMark":"I"},
+
+  {"id":61,"groupNo":16,"term":"Stubborn","mostMark":"D","leastMark":"D"},
+  {"id":62,"groupNo":16,"term":"Predictable","mostMark":"S","leastMark":"S"},
+  {"id":63,"groupNo":16,"term":"Instropective","mostMark":"C","leastMark":"#"},
+  {"id":64,"groupNo":16,"term":"Attractive","mostMark":"I","leastMark":"I"},
+
+  {"id":65,"groupNo":17,"term":"Helpful","mostMark":"S","leastMark":"S"},
+  {"id":66,"groupNo":17,"term":"Respectful","mostMark":"C","leastMark":"C"},
+  {"id":67,"groupNo":17,"term":"Pioneering","mostMark":"D","leastMark":"D"},
+  {"id":68,"groupNo":17,"term":"Optimistic","mostMark":"I","leastMark":"I"},
+
+  {"id":69,"groupNo":18,"term":"Thorough","mostMark":"C","leastMark":"C"},
+  {"id":70,"groupNo":18,"term":"Wiling","mostMark":"S","leastMark":"S"},
+  {"id":71,"groupNo":18,"term":"High-spirited","mostMark":"I","leastMark":"I"},
+  {"id":72,"groupNo":18,"term":"Eager","mostMark":"D","leastMark":"#"},
+
+  {"id":73,"groupNo":19,"term":"Joyful","mostMark":"I","leastMark":"I"},
+  {"id":74,"groupNo":19,"term":"Private","mostMark":"C","leastMark":"C"},
+  {"id":75,"groupNo":19,"term":"Considerate","mostMark":"S","leastMark":"S"},
+  {"id":76,"groupNo":19,"term":"Competitive","mostMark":"D","leastMark":"D"},
+
+  {"id":77,"groupNo":20,"term":"Inpatient","mostMark":"D","leastMark":"D"},
+  {"id":78,"groupNo":20,"term":"Poised","mostMark":"I","leastMark":"I"},
+  {"id":79,"groupNo":20,"term":"Modest","mostMark":"S","leastMark":"S"},
+  {"id":80,"groupNo":20,"term":"Observant","mostMark":"C","leastMark":"#"},
+
+  {"id":81,"groupNo":21,"term":"Dominant","mostMark":"D","leastMark":"D"},
+  {"id":82,"groupNo":21,"term":"Responsive","mostMark":"#","leastMark":"S"},
+  {"id":83,"groupNo":21,"term":"Expressive","mostMark":"I","leastMark":"I"},
+  {"id":84,"groupNo":21,"term":"Conscientious","mostMark":"C","leastMark":"C"},
+
+  {"id":85,"groupNo":22,"term":"Adventurous","mostMark":"D","leastMark":"D"},
+  {"id":86,"groupNo":22,"term":"Moderate","mostMark":"S","leastMark":"S"},
+  {"id":87,"groupNo":22,"term":"Out-going","mostMark":"I","leastMark":"I"},
+  {"id":88,"groupNo":22,"term":"Insightful","mostMark":"C","leastMark":"C"},
+
+  {"id":89,"groupNo":23,"term":"Animated","mostMark":"I","leastMark":"I"},
+  {"id":90,"groupNo":23,"term":"Generous","mostMark":"S","leastMark":"S"},
+  {"id":91,"groupNo":23,"term":"Persistent","mostMark":"D","leastMark":"D"},
+  {"id":92,"groupNo":23,"term":"Well-desciplined","mostMark":"C","leastMark":"C"},
+
+  {"id":93,"groupNo":24,"term":"Stimulating","mostMark":"I","leastMark":"I"},
+  {"id":94,"groupNo":24,"term":"Perceptive","mostMark":"C","leastMark":"C"},
+  {"id":95,"groupNo":24,"term":"Kind","mostMark":"S","leastMark":"S"},
+  {"id":96,"groupNo":24,"term":"Independent","mostMark":"D","leastMark":"D"},
+
+  {"id":97,"groupNo":25,"term":"Impulsive","mostMark":"I","leastMark":"I"},
+  {"id":98,"groupNo":25,"term":"Introverted","mostMark":"C","leastMark":"C"},
+  {"id":99,"groupNo":25,"term":"Forceful","mostMark":"D","leastMark":"D"},
+  {"id":100,"groupNo":25,"term":"Easy-going","mostMark":"S","leastMark":"S"},
+
+  {"id":101,"groupNo":26,"term":"Loyal","mostMark":"S","leastMark":"S"},
+  {"id":102,"groupNo":26,"term":"Charming","mostMark":"I","leastMark":"I"},
+  {"id":103,"groupNo":26,"term":"Logical","mostMark":"C","leastMark":"C"},
+  {"id":104,"groupNo":26,"term":"Bold","mostMark":"D","leastMark":"D"},
+
+  {"id":105,"groupNo":27,"term":"Original","mostMark":"#","leastMark":"D"},
+  {"id":106,"groupNo":27,"term":"Persuasive","mostMark":"I","leastMark":"#"},
+  {"id":107,"groupNo":27,"term":"Gentle","mostMark":"S","leastMark":"S"},
+  {"id":108,"groupNo":27,"term":"Humble","mostMark":"#","leastMark":"C"},
+
+  {"id":109,"groupNo":28,"term":"Sympathetic","mostMark":"S","leastMark":"S"},
+  {"id":110,"groupNo":28,"term":"Confident","mostMark":"I","leastMark":"I"},
+  {"id":111,"groupNo":28,"term":"Assertive","mostMark":"D","leastMark":"D"},
+  {"id":112,"groupNo":28,"term":"Impartial","mostMark":"#","leastMark":"C"}
+]
