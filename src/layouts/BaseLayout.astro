@@ -1,0 +1,23 @@
+---
+import "../styles/tailwind.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = "DiSC Personality Test", description = "" } = Astro.props as Props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-900">
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <slot />
+    </main>
+  </body>
+</html>

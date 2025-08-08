@@ -1,5 +1,6 @@
 ---
 import personalities from "../data/personalities.v2.json";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const groups = Array.from(new Set(personalities.map((p) => p.groupNo))).sort(
   (a, b) => a - b
 );
@@ -8,205 +9,105 @@ function getGroupTerms(groupNo) {
 }
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DiSC Personality Test</title>
-    <link rel="icon" href="/favicon.ico" />
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        padding: 20px;
-      }
-      .w3-container {
-        max-width: 1080px;
-        margin: 0 auto;
-      }
-      .w3-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-      .w3-col {
-        padding: 8px;
-      }
-      .s12 {
-        flex: 0 0 100%;
-      }
-      .m6 {
-        flex: 0 0 calc(50% - 16px);
-      }
-      .l3 {
-        flex: 0 0 calc(25% - 16px);
-      }
-      .w3-table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      .w3-table th,
-      .w3-table td {
-        border: 1px solid #e5e7eb;
-        padding: 6px 8px;
-        vertical-align: top;
-      }
-      .w3-theme-d3 {
-        background: #1f2937;
-        color: #fff;
-      }
-      .w3-theme-l3 {
-        background: #f3f4f6;
-      }
-      .w3-theme-d2 {
-        background: #374151;
-        color: #fff;
-        padding: 12px;
-        border-radius: 6px;
-      }
-      .w3-closebtn {
-        float: right;
-        cursor: pointer;
-      }
-      .w16left {
-        text-align: left;
-      }
-      .w3-radio {
-        width: 16px;
-        height: 16px;
-      }
-      .w3-button {
-        background: #2563eb;
-        color: #fff;
-        border: none;
-        padding: 10px 14px;
-        cursor: pointer;
-      }
-      .w3-round-large {
-        border-radius: 8px;
-      }
-      .w3-right {
-        float: right;
-      }
-      .w3-margin-8 {
-        margin: 8px;
-      }
-    </style>
-    <script type="module">
-      const storageKey = "disc:v1:progress";
-      function saveProgress() {
-        const form = document.querySelector("form");
-        const data = new FormData(form);
-        const state = { m: {}, l: {} };
-        for (const [key, value] of data.entries()) {
-          if (key.startsWith("m[")) state.m[key.slice(2, -1)] = value;
-          if (key.startsWith("l[")) state.l[key.slice(2, -1)] = value;
-        }
-        localStorage.setItem(storageKey, JSON.stringify(state));
-      }
-      function restoreProgress() {
-        const raw = localStorage.getItem(storageKey);
-        if (!raw) return;
-        try {
-          const state = JSON.parse(raw);
-          for (const idx in state.m) {
-            const v = state.m[idx];
-            const input = document.querySelector(
-              `input[name=\"m[${idx}]\"][value=\"${v}\"]`
-            );
-            if (input) input.checked = true;
-          }
-          for (const idx in state.l) {
-            const v = state.l[idx];
-            const input = document.querySelector(
-              `input[name=\"l[${idx}]\"][value=\"${v}\"]`
-            );
-            if (input) input.checked = true;
-          }
-        } catch {}
-      }
-      addEventListener("change", (e) => {
-        if (e.target instanceof HTMLInputElement) saveProgress();
-      });
-      addEventListener("DOMContentLoaded", restoreProgress);
-      addEventListener("submit", (e) => {
-        const form = e.target;
-        if (!(form instanceof HTMLFormElement)) return;
-        e.preventDefault();
-        const data = new FormData(form);
-        const params = new URLSearchParams();
-        for (const [key, value] of data.entries())
-          params.append(key, String(value));
-        const url = "/result?" + params.toString();
-        location.href = url;
-      });
-    </script>
-  </head>
-  <body>
-    <div class="w3-container">
-      <h2>&nbsp;</h2>
+<BaseLayout title="DiSC Personality Test">
+  <section class="space-y-6">
+    <div class="prose max-w-none">
       <h2>DiSC Personality Test</h2>
-      <div class="w3-row">
-        <div class="w3-col s12">
-          <p>
-            The purpose of the DiSC Personality Test is to help you understand
-            yourself and others. The Profile provides a framework for looking at
-            human behaviour while increasing your knowledge of your unique
-            behavioural pattern. The goal of this practical approach is to help
-            you create an environment that will ensure your success. At the same
-            time, you will gain an appreciation for the different motivational
-            environments required by other behavioural styles. The three
-            interpretation stages, which progress from general to specific, will
-            help you master the DiSC Dimensions of Behaviour approach for
-            understanding people.
-          </p>
-          <div class="w3-container w3-theme-d2 w3-section">
-            <span
-              onclick="this.parentElement.style.display='none'"
-              class="w3-closebtn">x</span
-            >
-            <h3>Instruction</h3>
-            <p>
-              Choose one <b>MOST</b> and one <b>LEAST</b> in each of the 28 groups
-              of words.
-            </p>
-          </div>
-        </div>
+      <p>
+        The purpose of the DiSC Personality Test is to help you understand yourself and others. The Profile provides a framework for looking at
+        human behaviour while increasing your knowledge of your unique behavioural pattern. The goal of this practical approach is to help you create an
+        environment that will ensure your success. At the same time, you will gain an appreciation for the different motivational environments required by
+        other behavioural styles. The three interpretation stages, which progress from general to specific, will help you master the DiSC Dimensions of
+        Behaviour approach for understanding people.
+      </p>
+      <div class="relative rounded-lg bg-slate-800 text-white p-4">
+        <button type="button" class="absolute right-3 top-2 inline-flex h-6 w-6 items-center justify-center rounded hover:bg-white/10" onclick="this.parentElement.style.display='none'">×</button>
+        <h3 class="text-lg font-semibold">Instruction</h3>
+        <p>Choose one <b>MOST</b> and one <b>LEAST</b> in each of the 28 groups of words.</p>
+      </div>
+    </div>
+
+    <form class="space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+          groups.slice(0, 4).map((g) => (
+            <div class="bg-white shadow-sm rounded-lg overflow-hidden ring-1 ring-slate-200">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr class="bg-slate-800 text-white">
+                    <th class="px-2 py-2 text-left">No</th>
+                    <th class="px-2 py-2 text-left">Term</th>
+                    <th class="px-2 py-2 text-left">Most</th>
+                    <th class="px-2 py-2 text-left">Least</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {getGroupTerms(g).map((t, idx) => (
+                    <tr class={g % 2 === 0 ? "bg-slate-50" : ""}>
+                      {idx === 0 && <th rowspan="4" class="px-2 py-2 align-top">{g}</th>}
+                      <td class="px-2 py-2 align-top">{t.term}</td>
+                      <td class="px-2 py-2">
+                        <input
+                          type="radio"
+                          class="h-4 w-4"
+                          id={`m_${g}_${idx}`}
+                          name={`m[${g}]`}
+                          value={t.mostMark}
+                          required
+                        />
+                      </td>
+                      <td class="px-2 py-2">
+                        <input
+                          type="radio"
+                          class="h-4 w-4"
+                          id={`l_${g}_${idx}`}
+                          name={`l[${g}]`}
+                          value={t.leastMark}
+                          required
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))
+        }
       </div>
 
-      <form>
-        <div class="w3-row">
-          {
-            groups.slice(0, 4).map((g) => (
-              <div class="w3-col m6 l3">
-                <table class="w3-table">
+      {
+        Array.from({ length: 6 }).map((_, sectionIdx) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {groups.slice(sectionIdx * 4 + 4, sectionIdx * 4 + 8).map((g) => (
+              <div class="bg-white shadow-sm rounded-lg overflow-hidden ring-1 ring-slate-200">
+                <table class="w-full border-collapse text-sm">
                   <thead>
-                    <tr class="w3-theme-d3">
-                      <th>No</th>
-                      <th>Term</th>
-                      <th>Most</th>
-                      <th>Least</th>
+                    <tr class="bg-slate-800 text-white">
+                      <th class="px-2 py-2 text-left">No</th>
+                      <th class="px-2 py-2 text-left">Term</th>
+                      <th class="px-2 py-2 text-left">Most</th>
+                      <th class="px-2 py-2 text-left">Least</th>
                     </tr>
                   </thead>
                   <tbody>
                     {getGroupTerms(g).map((t, idx) => (
-                      <tr class={g % 2 === 0 ? "w3-theme-l3" : ""}>
-                        {idx === 0 && <th rowspan="4">{g}</th>}
-                        <td class="w16left">{t.term}</td>
-                        <td>
+                      <tr class={g % 2 === 0 ? "bg-slate-50" : ""}>
+                        {idx === 0 && <th rowspan="4" class="px-2 py-2 align-top">{g}</th>}
+                        <td class="px-2 py-2 align-top">{t.term}</td>
+                        <td class="px-2 py-2">
                           <input
                             type="radio"
-                            class="w3-radio"
+                            class="h-4 w-4"
                             id={`m_${g}_${idx}`}
                             name={`m[${g}]`}
                             value={t.mostMark}
                             required
                           />
                         </td>
-                        <td>
+                        <td class="px-2 py-2">
                           <input
                             type="radio"
-                            class="w3-radio"
+                            class="h-4 w-4"
                             id={`l_${g}_${idx}`}
                             name={`l[${g}]`}
                             value={t.leastMark}
@@ -218,71 +119,63 @@ function getGroupTerms(groupNo) {
                   </tbody>
                 </table>
               </div>
-            ))
-          }
-        </div>
-
-        {
-          Array.from({ length: 6 }).map((_, sectionIdx) => (
-            <div class="w3-row">
-              {groups.slice(sectionIdx * 4 + 4, sectionIdx * 4 + 8).map((g) => (
-                <div class="w3-col m6 l3">
-                  <table class="w3-table">
-                    <thead>
-                      <tr class="w3-theme-d3">
-                        <th>No</th>
-                        <th>Term</th>
-                        <th>Most</th>
-                        <th>Least</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {getGroupTerms(g).map((t, idx) => (
-                        <tr class={g % 2 === 0 ? "w3-theme-l3" : ""}>
-                          {idx === 0 && <th rowspan="4">{g}</th>}
-                          <td class="w16left">{t.term}</td>
-                          <td>
-                            <input
-                              type="radio"
-                              class="w3-radio"
-                              id={`m_${g}_${idx}`}
-                              name={`m[${g}]`}
-                              value={t.mostMark}
-                              required
-                            />
-                          </td>
-                          <td>
-                            <input
-                              type="radio"
-                              class="w3-radio"
-                              id={`l_${g}_${idx}`}
-                              name={`l[${g}]`}
-                              value={t.leastMark}
-                              required
-                            />
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              ))}
-            </div>
-          ))
-        }
-
-        <div class="w3-row">
-          <div class="w3-col s12">
-            <h6>&nbsp;</h6>
-            <input
-              type="submit"
-              value="process"
-              class="w3-button w3-round-large w3-right w3-margin-8"
-            />
+            ))}
           </div>
-        </div>
-        <h2>&nbsp;</h2>
-      </form>
-    </div>
-  </body>
-</html>
+        ))
+      }
+
+      <div class="flex justify-end">
+        <input
+          type="submit"
+          value="Process"
+          class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+    </form>
+  </section>
+
+  <script type="module">
+    const storageKey = "disc:v1:progress";
+    function saveProgress() {
+      const form = document.querySelector("form");
+      const data = new FormData(form);
+      const state = { m: {}, l: {} };
+      for (const [key, value] of data.entries()) {
+        if (key.startsWith("m[")) state.m[key.slice(2, -1)] = value;
+        if (key.startsWith("l[")) state.l[key.slice(2, -1)] = value;
+      }
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+    function restoreProgress() {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return;
+      try {
+        const state = JSON.parse(raw);
+        for (const idx in state.m) {
+          const v = state.m[idx];
+          const input = document.querySelector(`input[name="m[${idx}]"][value="${v}"]`);
+          if (input) input.checked = true;
+        }
+        for (const idx in state.l) {
+          const v = state.l[idx];
+          const input = document.querySelector(`input[name="l[${idx}]"][value="${v}"]`);
+          if (input) input.checked = true;
+        }
+      } catch {}
+    }
+    addEventListener("change", (e) => {
+      if (e.target instanceof HTMLInputElement) saveProgress();
+    });
+    addEventListener("DOMContentLoaded", restoreProgress);
+    addEventListener("submit", (e) => {
+      const form = e.target;
+      if (!(form instanceof HTMLFormElement)) return;
+      e.preventDefault();
+      const data = new FormData(form);
+      const params = new URLSearchParams();
+      for (const [key, value] of data.entries()) params.append(key, String(value));
+      const url = "/result?" + params.toString();
+      location.href = url;
+    });
+  </script>
+</BaseLayout>

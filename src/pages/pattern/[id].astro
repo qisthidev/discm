@@ -1,5 +1,6 @@
 ---
 import patterns from "../../data/patterns.json";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   return patterns.map((p) => ({
@@ -10,44 +11,25 @@ export async function getStaticPaths() {
 const { pattern } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pattern.name} — DISC Pattern</title>
-    <meta name="description" content={`About ${pattern.name} DISC pattern`} />
-    <meta property="og:title" content={`${pattern.name} — DISC Pattern`} />
-    <meta property="og:image" content={`/og/pattern-${pattern.id}.png`} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        padding: 20px;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <a href="/">← Take the test</a>
-    <h1>{pattern.name}</h1>
-    <div class="grid">
-      <div><strong>Emotions</strong><br />{pattern.emotions}</div>
-      <div><strong>Goal</strong><br />{pattern.goal}</div>
-      <div><strong>Judges Others</strong><br />{pattern.judges_others}</div>
-      <div>
-        <strong>Influences Others</strong><br />{pattern.influences_others}
-      </div>
-      <div><strong>Org Value</strong><br />{pattern.organization_value}</div>
-      <div><strong>Overuses</strong><br />{pattern.overuses}</div>
-      <div><strong>Under Pressure</strong><br />{pattern.under_pressure}</div>
-      <div><strong>Fear</strong><br />{pattern.fear}</div>
+<BaseLayout title={`${pattern.name} — DISC Pattern`} description={`About ${pattern.name} DISC pattern`}>
+  <meta property="og:title" content={`${pattern.name} — DISC Pattern`} />
+  <meta property="og:image" content={`/og/pattern-${pattern.id}.png`} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <a class="text-sm text-slate-700 hover:underline" href="/">← Take the test</a>
+  <h1 class="text-2xl font-bold mt-2 mb-4">{pattern.name}</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+    <div><strong>Emotions</strong><br />{pattern.emotions}</div>
+    <div><strong>Goal</strong><br />{pattern.goal}</div>
+    <div><strong>Judges Others</strong><br />{pattern.judges_others}</div>
+    <div>
+      <strong>Influences Others</strong><br />{pattern.influences_others}
     </div>
-    <p><strong>Effectiveness</strong><br />{pattern.effectiveness}</p>
-    <p>{pattern.description}</p>
-  </body>
-</html>
+    <div><strong>Org Value</strong><br />{pattern.organization_value}</div>
+    <div><strong>Overuses</strong><br />{pattern.overuses}</div>
+    <div><strong>Under Pressure</strong><br />{pattern.under_pressure}</div>
+    <div><strong>Fear</strong><br />{pattern.fear}</div>
+  </div>
+  <p class="mt-4"><strong>Effectiveness</strong><br />{pattern.effectiveness}</p>
+  <p>{pattern.description}</p>
+</BaseLayout>
